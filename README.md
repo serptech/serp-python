@@ -83,7 +83,7 @@ if __name__ == '__main__':
 
 ```
 
-_For more examples and usage, please refer to the [docs](https://orbl-onpremise.github.io/orbl-onpremise-python/)._
+_For more examples and usage, please refer to the [docs](./docs)._
 
 ## Development setup
 
@@ -101,6 +101,17 @@ To run linters & test suite:
 ./scripts/test.sh
 ```
 
+## How to release
+
+1. Update version in:
+   * `CHANGELOG.md`
+   * `__init__.py`
+   * `pyproject.toml`
+2. Lock deps to update version in poetry: `poetry lock`
+3. `poetry config pypi-token.pypi YOUR_API_TOKEN`
+4. `poetry build`
+5. `poetry publish`
+
 ## Release History
 * 0.1.0
     * Initial version of package
@@ -111,8 +122,7 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 
 ## Contributing
 
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
+1. Create your feature branch (`git checkout -b feature/fooBar`)
+2. Commit your changes (`git commit -am 'Add some fooBar'`)
+3. Push to the branch (`git push origin feature/fooBar`)
+4. Create a new Pull Request
