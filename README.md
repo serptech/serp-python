@@ -108,9 +108,10 @@ To run linters & test suite:
    * `__init__.py`
    * `pyproject.toml`
 2. Lock deps to update version in poetry: `poetry lock`
-3. `poetry config pypi-token.pypi YOUR_API_TOKEN`
-4. `poetry build`
-5. `poetry publish`
+3. Get API Token from account settings in [PyPI](https://pypi.org/manage/account/)
+4. `poetry config pypi-token.pypi YOUR_API_TOKEN`
+5. `poetry build`
+6. `poetry publish`
 
 ## Release History
 * 0.1.0
