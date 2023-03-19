@@ -6,7 +6,7 @@ HTTP_CLIENT_TIMEOUT: float = 4.0
 sentinel = object()
 
 
-class EntryConf(str, Enum):
+class EntryConf(int, Enum):
     NM = 1
     NEW = 2
     EXACT = 3

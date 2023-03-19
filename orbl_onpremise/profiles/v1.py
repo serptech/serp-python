@@ -44,7 +44,7 @@ class Impl(APIBase, ProfilesBase):
         id: str,
         image: FileType,
         create_min_facesize: Union[int, object] = sentinel,
-        min_conf: EntryConf = EntryConf.HA,
+        min_conf: int = EntryConf.HA.value,
         identify_asm: Union[bool, object] = sentinel,
     ) -> Response:
         data = request_form_processing(locals(), ["self", "id", "image"])
@@ -99,7 +99,7 @@ class ImplAsync(APIBaseAsync, ProfilesBase):
         id: str,
         image: FileType,
         create_min_facesize: Union[int, object] = sentinel,
-        min_conf: EntryConf = EntryConf.HA,
+        min_conf: int = EntryConf.HA.value,
         identify_asm: Union[bool, object] = sentinel,
     ) -> Response:
         data = request_form_processing(locals(), ["self", "id", "image"])

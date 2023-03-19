@@ -4,7 +4,7 @@ from typing import List, Union
 from httpx import Response
 
 from orbl_onpremise.base import APIBase, APIBaseAsync, Base
-from orbl_onpremise.constants import EntryConf, EntryMood, sentinel
+from orbl_onpremise.constants import sentinel
 from orbl_onpremise.utils import request_query_processing
 
 
@@ -17,11 +17,11 @@ class Impl(APIBase, EntriesBase):
     def list(
         self,
         person_ids: Union[List[str], object] = sentinel,
-        conf: Union[List[EntryConf], object] = sentinel,
+        conf: Union[List[int], object] = sentinel,
         age_from: Union[int, object] = sentinel,
         age_to: Union[int, object] = sentinel,
         sex: Union[int, object] = sentinel,
-        mood: Union[List[EntryMood], object] = sentinel,
+        mood: Union[List[str], object] = sentinel,
         origin_ids: Union[List[int], object] = sentinel,
         spaces_ids: Union[List[int], object] = sentinel,
         date_from: Union[datetime, object] = sentinel,
@@ -38,11 +38,11 @@ class ImplAsync(APIBaseAsync, EntriesBase):
     async def list(
         self,
         person_ids: Union[List[str], object] = sentinel,
-        conf: Union[List[EntryConf], object] = sentinel,
+        conf: Union[List[int], object] = sentinel,
         age_from: Union[int, object] = sentinel,
         age_to: Union[int, object] = sentinel,
         sex: Union[int, object] = sentinel,
-        mood: Union[List[EntryMood], object] = sentinel,
+        mood: Union[List[str], object] = sentinel,
         origin_ids: Union[List[int], object] = sentinel,
         spaces_ids: Union[List[int], object] = sentinel,
         date_from: Union[datetime, object] = sentinel,
