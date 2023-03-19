@@ -16,6 +16,7 @@ OR
 
 Changelog
 =========
+* 0.1.1
+    * Fixed types of custom Enum classes and in corresponding methods
 * 0.1.0
-    * Support for WebSocket Events
-    * Drop Python 3.6 support
+    * Initial version of package

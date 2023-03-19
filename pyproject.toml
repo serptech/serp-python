@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "orbl_onpremise"
-version = "0.1.0"
+version = "0.1.1"
 description = "A Python package for interacting with ORBL on-premise API"
 authors = []
 license = "MIT"

@@ -114,6 +114,8 @@ To run linters & test suite:
 6. `poetry publish`
 
 ## Release History
+* 0.1.1
+    * Fixed types of custom Enum classes and in corresponding methods
 * 0.1.0
     * Initial version of package
 

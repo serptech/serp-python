@@ -6,18 +6,6 @@ from orbl_onpremise import AsyncClient, Client
 
 
 @pytest.fixture(scope="session")
-def monkeypatch_scope_session():
-    """
-    This is defined for ability of session-scoped fixtures to use monkeypatch.
-    """
-    from _pytest.monkeypatch import MonkeyPatch
-
-    mpatch = MonkeyPatch()
-    yield mpatch
-    mpatch.undo()
-
-
-@pytest.fixture(scope="session")
 def event_loop():
     """
     Run coroutines in non async code
