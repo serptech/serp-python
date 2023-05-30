@@ -10,7 +10,7 @@ When video streams from network cameras are processed, all types of entries can 
 
 ### List Entries
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method returns paginated list of entries.
 
@@ -19,7 +19,7 @@ All the filtering parameters in this call are optional, this example just shows 
 ```python
 import datetime
 
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")

@@ -11,12 +11,12 @@ You always have space named "default", and even if you use account tokens (not s
 
 ### Create Space
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method creates new space with specified name.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.spaces.create(name="test")
@@ -26,13 +26,13 @@ print(json_response)
 
 ### List Spaces
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
-This method returns paginated list of spaces. 
+This method returns paginated list of spaces.
 Can be filtered by name using `q`.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.spaces.list(q="te", limit=10, offset=5)
@@ -42,12 +42,12 @@ print(json_response)
 
 ### Get Space by id
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method returns space info, if found by its id.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.spaces.get(id=1)
@@ -57,12 +57,12 @@ print(json_response)
 
 ### Update Space by id
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method updates space info, if found by its id.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.spaces.update(id=1, name="newname")
@@ -72,12 +72,12 @@ print(json_response)
 
 ### Delete Space by id
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method deletes space, if found by its id.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.spaces.delete(id=1)
@@ -88,13 +88,13 @@ if response.status_code == 204:
 
 ### Create Token for specified Space
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method creates new token for space, if found by its id.
 You can create temporary or permanent token as with any other type of tokens.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.spaces.token(id=1, permanent=True)

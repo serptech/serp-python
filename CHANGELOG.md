@@ -1,22 +1,20 @@
-Install the latest
-===================
+# Install the latest
 
 To install the latest version simply run:
 
-`pip3 install orbl_onpremise`
+`pip3 install serp_onpremise`
 
 OR
 
-`poetry add orbl_onpremise`
+`poetry add serp_onpremise`
 
 OR
 
-`pipenv install orbl_onpremise`
+`pipenv install serp_onpremise`
 
+# Changelog
 
-Changelog
-=========
-* 0.1.1
-    * Fixed types of custom Enum classes and in corresponding methods
-* 0.1.0
-    * Initial version of package
+- 0.1.1
+  - Fixed types of custom Enum classes and in corresponding methods
+- 0.1.0
+  - Initial version of package

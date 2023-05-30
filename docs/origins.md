@@ -12,14 +12,14 @@ All data that is intended for cataloging and storage in the platform cannot be s
 
 ### Create Origin
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method creates new origin with specified name.
 
 All of the parameters, except `name`, are optional.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.origins.create(
@@ -30,13 +30,13 @@ json_response = response.json()
 
 ### List Origins
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
-This method returns paginated list of origins. 
+This method returns paginated list of origins.
 Can be filtered by name using `q` & by list of space ids.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.origins.list(q="te", spaces_ids=[1, 2], limit=10, offset=5)
@@ -45,12 +45,12 @@ json_response = response.json()
 
 ### Get Origin by id
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method returns origin info, if found by its id.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.origins.get(id=1)
@@ -59,16 +59,16 @@ json_response = response.json()
 
 ### Update Origin by id
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method updates origin info, if found by its id.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.origins.update(
-    id=1, 
+    id=1,
     name="test"
 )
 json_response = response.json()
@@ -76,12 +76,12 @@ json_response = response.json()
 
 ### Delete Origin by id
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method deletes origin, if found by its id.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.origins.delete(id=1)

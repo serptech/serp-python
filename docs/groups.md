@@ -7,12 +7,12 @@ Each profile can be added to any number of groups.
 
 ### Create Profile Group
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method creates new person group.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.groups_profiles.create(name="test")
@@ -21,16 +21,16 @@ json_response = response.json()
 
 ### List Profile Groups
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
-This method returns paginated list of groups. 
+This method returns paginated list of groups.
 
 Can be filtered by name using `q`.
 
 All the filtering parameters in this call are optional, this example just shows every single option.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.groups_profiles.list(
@@ -39,7 +39,7 @@ response = c.groups_profiles.list(
     person_ids_exclude=["fedcab10-dcba-dcba10-fedcab10"],
     groups_ids=[1, 2, 3],
     spaces_ids=[4, 5, 6],
-    limit=10, 
+    limit=10,
     offset=5
 )
 json_response = response.json()
@@ -47,12 +47,12 @@ json_response = response.json()
 
 ### Get Profile Group by id
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method returns group info, if found by its id.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.groups_profiles.get(id=1)
@@ -61,12 +61,12 @@ json_response = response.json()
 
 ### Update Profile Group by id
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method updates group info, if found by its id.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.groups_profiles.update(id=1, name="newname")
@@ -75,12 +75,12 @@ json_response = response.json()
 
 ### Delete Profile Group by id
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method deletes group, if found by its id.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.groups_profiles.delete(id=1)
@@ -91,14 +91,14 @@ if response.status_code == 204:
 
 ### Get a list of profiles in a group
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method returns paginated results of persons that are in a group, if found by id.
 
 You can filter out list by specifying exact list of person ids.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.groups_profiles.person_ids(
@@ -112,12 +112,12 @@ json_response = response.json()
 
 ### Add profiles to groups
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method allows you to add many persons to many groups in one request.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.groups_profiles.add_person_ids(
@@ -128,12 +128,12 @@ response = c.groups_profiles.add_person_ids(
 
 ### Remove profiles to groups
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method allows you to remove many persons from many groups in one request.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.groups_profiles.remove_person_ids(

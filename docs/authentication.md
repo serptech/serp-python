@@ -4,9 +4,9 @@
 
 Some things to note about access tokens:
 
-1. In order to access API, you need valid token. 
-2. Valid token is the one, that is currently active & not expired. 
-3. Tokens could be temporary & permanent (those do not expire automatically). 
+1. In order to access API, you need valid token.
+2. Valid token is the one, that is currently active & not expired.
+3. Tokens could be temporary & permanent (those do not expire automatically).
 4. As of now, all temporary tokens have the same TTL of 24 hours since creation time.
 
 ### Register
@@ -14,7 +14,7 @@ Some things to note about access tokens:
 If you use root token, you can create new users.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(base_url="http://localhost:8080", api_token="root_token")
 register_response = c.auth.register(username="usr", password="pwd")
@@ -39,7 +39,7 @@ else:
 This method creates new temporary token for user if username/password pair is correct.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(base_url="http://localhost:8080")
 login_response = c.auth.token(username="usr", password="pwd")
@@ -73,7 +73,7 @@ else:
 After that you need to re-create Client instance with as so:
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 client = Client(
     api_token=json_login_response["token"]["key"],
@@ -88,13 +88,13 @@ client = Client(
 Given correct current password, this method allows you to specify new password & optionally reset all tokens that were previously created.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.auth.password_change(
     old_password="pwd",
     new_password="newpwd"
-) 
+)
 json_response = response.json()
 
 if response.status_code == 204:

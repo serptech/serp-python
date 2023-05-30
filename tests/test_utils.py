@@ -2,8 +2,8 @@ import os
 
 import pytest
 
-from orbl_onpremise.constants import sentinel
-from orbl_onpremise.utils import (
+from serp_onpremise.constants import sentinel
+from serp_onpremise.utils import (
     prepare_file_processing,
     process_query_params,
     request_dict_processing,

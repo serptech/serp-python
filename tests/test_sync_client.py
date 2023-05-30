@@ -1,4 +1,4 @@
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 
 def test_client_default_api_version():

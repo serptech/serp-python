@@ -12,12 +12,12 @@ You can have temporary (24 hours) or permanent token. Recommended way is to alwa
 
 ### Create Token
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method creates new temporary or permanent token.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.tokens.access.create(permanent=True)
@@ -27,15 +27,13 @@ print(json_response)
 
 ### List Tokens
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
-This method returns paginated list of tokens. 
+This method returns paginated list of tokens.
 Can be filtered by permanence of tokens.
 
-
-
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.tokens.access.list(permanent=False, limit=10, offset=5)
@@ -45,12 +43,12 @@ print(json_response)
 
 ### Get Token by id
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method returns token info, if found by its id.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.tokens.access.get(token_id_or_key=1)
@@ -60,12 +58,12 @@ print(json_response)
 
 ### Update Token by id
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method updates token info, if found by its id.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.tokens.access.update(token_id_or_key=1, is_active=False)
@@ -75,12 +73,12 @@ print(json_response)
 
 ### Delete Token by id
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method deletes token, if found by its id.
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 # NOTE: There is empty response in case of successful operation
@@ -91,17 +89,18 @@ if response.status_code == 204:
 
 ### Delete List of Tokens
 
-__Authorized Client() required.__
+**Authorized Client() required.**
 
 This method deletes many tokens, if found by permanent filter.
 
 Rules of this filter are:
-* False - deletes only temporary tokens
-* True - deletes only permanent tokens
-* None - deletes all tokens
+
+- False - deletes only temporary tokens
+- True - deletes only permanent tokens
+- None - deletes all tokens
 
 ```python
-from orbl_onpremise import Client
+from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 # NOTE: There is empty response in case of successful operation
