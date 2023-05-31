@@ -78,7 +78,7 @@ from serp_onpremise import Client
 
 c = Client(api_token="abcd", base_url="http://localhost:8080")
 response = c.profiles.delete(id="abcdef01-abcd-abcd01-abcdef01")
-if response.status_code == 204:
+if response.status_code == 202:
     # NOTE: There is empty response in case of successful operation
     print("Profile deleted successfully.")
 ```
