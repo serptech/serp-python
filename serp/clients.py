@@ -26,7 +26,7 @@ class Catcher:
     def __call__(self, *args: list, **kwargs: dict) -> Any:
         method = self.prev.split(".")[-1]
         path = ".".join(self.prev.split(".")[:-1])
-        module_path = f"serp_onpremise.{path}.v{self.api_version}"
+        module_path = f"serp.{path}.v{self.api_version}"
         module = import_module(module_path)
         if module:
             cls = getattr(module, ("ImplAsync" if self.is_async else "Impl"))

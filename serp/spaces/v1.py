@@ -36,7 +36,9 @@ class Impl(APIBase, SpacesBase):
         with self.get_client() as client:
             return client.post(url=self.get_url(), json=data)
 
-    def list(self, q: str = None, limit: int = 20, offset: int = 0) -> Response:
+    def list(
+        self, q: str = None, limit: int = 20, offset: int = 0
+    ) -> Response:
         data = {"q": q, "limit": limit, "offset": offset}
 
         with self.get_client() as client:
@@ -76,7 +78,9 @@ class Impl(APIBase, SpacesBase):
         data = {"permanent": permanent}
 
         with self.get_client() as client:
-            return client.post(url=self.get_url(f"{id}/tokens/access"), json=data)
+            return client.post(
+                url=self.get_url(f"{id}/tokens/access"), json=data
+            )
 
 
 class ImplAsync(APIBaseAsync, SpacesBase):
@@ -101,7 +105,9 @@ class ImplAsync(APIBaseAsync, SpacesBase):
         async with self.get_client() as client:
             return await client.post(url=self.get_url(), json=data)
 
-    async def list(self, q: str = None, limit: int = 20, offset: int = 0) -> Response:
+    async def list(
+        self, q: str = None, limit: int = 20, offset: int = 0
+    ) -> Response:
         data = {"q": q, "limit": limit, "offset": offset}
 
         async with self.get_client() as client:
@@ -141,4 +147,6 @@ class ImplAsync(APIBaseAsync, SpacesBase):
         data = {"permanent": permanent}
 
         async with self.get_client() as client:
-            return await client.post(url=self.get_url(f"{id}/tokens/access"), json=data)
+            return await client.post(
+                url=self.get_url(f"{id}/tokens/access"), json=data
+            )

@@ -51,7 +51,9 @@ class ImplAsync(APIBaseAsync, UsersBase):
         async with self.get_client() as client:
             return await client.get(url=self.get_url(f"{id}"))
 
-    async def update(self, id: int, is_active: bool, username: str) -> Response:
+    async def update(
+        self, id: int, is_active: bool, username: str
+    ) -> Response:
         data = {"is_active": is_active, "username": username}
         async with self.get_client() as client:
             return await client.patch(url=self.get_url(f"{id}"), json=data)

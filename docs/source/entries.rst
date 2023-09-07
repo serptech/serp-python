@@ -29,7 +29,7 @@ just shows every single option.
 
    import datetime
 
-   from serp_onpremise import Client
+   from serp import Client
 
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")

@@ -30,7 +30,7 @@ provided photo.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    with open("image.png", "rb") as f:
@@ -50,7 +50,7 @@ extracted from provided photo.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    with open("image.png", "rb") as f:
@@ -70,7 +70,7 @@ from provided photo.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    with open("image.png", "rb") as f:
@@ -87,7 +87,7 @@ This method deletes profile, if found by its id.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.profiles.delete(id="abcdef01-abcd-abcd01-abcdef01")

@@ -16,7 +16,7 @@ This method creates new person group.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.groups_profiles.create(name="test")
@@ -36,7 +36,7 @@ just shows every single option.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.groups_profiles.list(
@@ -59,7 +59,7 @@ This method returns group info, if found by its id.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.groups_profiles.get(id=1)
@@ -74,7 +74,7 @@ This method updates group info, if found by its id.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.groups_profiles.update(id=1, name="newname")
@@ -89,7 +89,7 @@ This method deletes group, if found by its id.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.groups_profiles.delete(id=1)
@@ -109,7 +109,7 @@ You can filter out list by specifying exact list of person ids.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.groups_profiles.person_ids(
@@ -130,7 +130,7 @@ request.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.groups_profiles.add_person_ids(
@@ -148,7 +148,7 @@ request.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.groups_profiles.remove_person_ids(

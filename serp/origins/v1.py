@@ -4,10 +4,7 @@ from httpx import Response
 
 from serp.base import APIBase, APIBaseAsync, Base
 from serp.constants import sentinel
-from serp.utils import (
-    request_dict_processing,
-    request_query_processing,
-)
+from serp.utils import request_dict_processing, request_query_processing
 
 
 class OriginsBase(Base):

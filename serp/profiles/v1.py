@@ -51,7 +51,9 @@ class Impl(APIBase, ProfilesBase):
         files = prepare_file_processing(image)
 
         with self.get_client() as client:
-            return client.post(url=self.get_url(f"{id}/reinit"), data=data, files=files)
+            return client.post(
+                url=self.get_url(f"{id}/reinit"), data=data, files=files
+            )
 
     def search(
         self,
@@ -65,7 +67,9 @@ class Impl(APIBase, ProfilesBase):
             files.update(files2)
         data = {"identify_asm": str(identify_asm)}
         with self.get_client() as client:
-            return client.post(url=self.get_url("search"), data=data, files=files)
+            return client.post(
+                url=self.get_url("search"), data=data, files=files
+            )
 
 
 class ImplAsync(APIBaseAsync, ProfilesBase):
@@ -82,7 +86,9 @@ class ImplAsync(APIBaseAsync, ProfilesBase):
         files = prepare_file_processing(image)
 
         async with self.get_client() as client:
-            return await client.post(url=self.get_url(), data=data, files=files)
+            return await client.post(
+                url=self.get_url(), data=data, files=files
+            )
 
     async def delete(self, id: str) -> Response:
         async with self.get_client() as client:
@@ -116,4 +122,6 @@ class ImplAsync(APIBaseAsync, ProfilesBase):
             files.update(files2)
         data = {"identify_asm": str(identify_asm)}
         async with self.get_client() as client:
-            return await client.post(url=self.get_url("search"), data=data, files=files)
+            return await client.post(
+                url=self.get_url("search"), data=data, files=files
+            )

@@ -58,9 +58,13 @@ class Impl(APIBase, GroupsBase):
         data = request_query_processing(locals(), ["self", "id"])
 
         with self.get_client() as client:
-            return client.get(url=self.get_url(f"{id}/person_ids"), params=data)
+            return client.get(
+                url=self.get_url(f"{id}/person_ids"), params=data
+            )
 
-    def add_person_ids(self, person_ids: List[str], groups_ids: List[int]) -> Response:
+    def add_person_ids(
+        self, person_ids: List[str], groups_ids: List[int]
+    ) -> Response:
         data = {"person_ids": person_ids, "groups_ids": groups_ids}
         with self.get_client() as client:
             return client.post(url=self.get_url("person_ids"), json=data)
@@ -70,7 +74,9 @@ class Impl(APIBase, GroupsBase):
     ) -> Response:
         data = {"person_ids": person_ids, "groups_ids": groups_ids}
         with self.get_client() as client:
-            return client.request("DELETE", url=self.get_url("person_ids"), json=data)
+            return client.request(
+                "DELETE", url=self.get_url("person_ids"), json=data
+            )
 
 
 class ImplAsync(APIBaseAsync, GroupsBase):
@@ -116,7 +122,9 @@ class ImplAsync(APIBaseAsync, GroupsBase):
         data = request_query_processing(locals(), ["self", "id"])
 
         async with self.get_client() as client:
-            return await client.get(url=self.get_url(f"{id}/person_ids"), params=data)
+            return await client.get(
+                url=self.get_url(f"{id}/person_ids"), params=data
+            )
 
     async def add_person_ids(
         self, person_ids: List[str], groups_ids: List[int]

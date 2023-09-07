@@ -33,7 +33,7 @@ All of the parameters, except ``name``, are optional.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.origins.create(
@@ -51,7 +51,7 @@ using ``q`` & by list of space ids.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.origins.list(q="te", spaces_ids=[1, 2], limit=10, offset=5)
@@ -66,7 +66,7 @@ This method returns origin info, if found by its id.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.origins.get(id=1)
@@ -81,7 +81,7 @@ This method updates origin info, if found by its id.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.origins.update(
@@ -99,7 +99,7 @@ This method deletes origin, if found by its id.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.origins.delete(id=1)

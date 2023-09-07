@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 
 def readme():
@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name="serp",
-    version="0.1.3",
+    version="0.1.5",
     author="astrotourist",
     author_email="d@orbl.io",
     description="Python API client for SERP API",

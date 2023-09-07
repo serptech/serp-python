@@ -19,7 +19,7 @@ If you use root token, you can create new users.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(base_url="http://localhost:8080", api_token="root_token")
    register_response = c.auth.register(username="usr", password="pwd")
@@ -44,7 +44,7 @@ pair is correct.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(base_url="http://localhost:8080")
    login_response = c.auth.token(username="usr", password="pwd")
@@ -77,7 +77,7 @@ After that you need to re-create Client instance with as so:
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    client = Client(
        api_token=json_login_response["token"]["key"],
@@ -94,7 +94,7 @@ password & optionally reset all tokens that were previously created.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.auth.password_change(

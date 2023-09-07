@@ -2,15 +2,15 @@
 
 To install the latest version simply run:
 
-`pip3 install serp_onpremise`
+`pip3 install serp`
 
 OR
 
-`poetry add serp_onpremise`
+`poetry add serp`
 
 OR
 
-`pipenv install serp_onpremise`
+`pipenv install serp`
 
 # Changelog
 

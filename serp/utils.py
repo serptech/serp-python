@@ -23,7 +23,9 @@ def validate_month_str(month_str: str) -> None:
     try:
         datetime.datetime.strptime(month_str, "%Y-%m")
     except ValueError:
-        raise ValueError(f"Incorrect month format in {month_str}, should be YYYY-MM")
+        raise ValueError(
+            f"Incorrect month format in {month_str}, should be YYYY-MM"
+        )
 
 
 def get_package_version() -> str:
@@ -72,7 +74,8 @@ def request_dict_processing(
 
     return dict(
         filter(
-            lambda kwarg: kwarg[1] is not sentinel and kwarg[0] not in inner_exclude,
+            lambda kwarg: kwarg[1] is not sentinel
+            and kwarg[0] not in inner_exclude,
             local_items.items(),
         )
     )

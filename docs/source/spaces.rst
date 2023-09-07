@@ -24,7 +24,7 @@ This method creates new space with specified name.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.spaces.create(name="test")
@@ -41,7 +41,7 @@ using ``q``.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.spaces.list(q="te", limit=10, offset=5)
@@ -57,7 +57,7 @@ This method returns space info, if found by its id.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.spaces.get(id=1)
@@ -73,7 +73,7 @@ This method updates space info, if found by its id.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.spaces.update(id=1, name="newname")
@@ -89,7 +89,7 @@ This method deletes space, if found by its id.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.spaces.delete(id=1)
@@ -107,7 +107,7 @@ create temporary or permanent token as with any other type of tokens.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.spaces.token(id=1, permanent=True)

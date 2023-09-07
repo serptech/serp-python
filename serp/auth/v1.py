@@ -21,7 +21,9 @@ class Impl(APIBase, AuthBase):
         with self.get_client() as client:
             return client.post(url=self.get_url("register"), json=data)
 
-    def password_change(self, old_password: str, new_password: str) -> Response:
+    def password_change(
+        self, old_password: str, new_password: str
+    ) -> Response:
         data = {
             "old_password": old_password,
             "password": new_password,
@@ -45,7 +47,9 @@ class ImplAsync(APIBaseAsync, AuthBase):
         async with self.get_client() as client:
             return await client.post(url=self.get_url("register"), json=data)
 
-    async def password_change(self, old_password: str, new_password: str) -> Response:
+    async def password_change(
+        self, old_password: str, new_password: str
+    ) -> Response:
         data = {
             "old_password": old_password,
             "password": new_password,
@@ -53,4 +57,6 @@ class ImplAsync(APIBaseAsync, AuthBase):
         }
 
         async with self.get_client() as client:
-            return await client.post(url=self.get_url("password/change"), json=data)
+            return await client.post(
+                url=self.get_url("password/change"), json=data
+            )

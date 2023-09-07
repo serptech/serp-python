@@ -24,7 +24,7 @@ This method creates new temporary or permanent token.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.tokens.access.create(permanent=True)
@@ -41,7 +41,7 @@ permanence of tokens.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.tokens.access.list(permanent=False, limit=10, offset=5)
@@ -57,7 +57,7 @@ This method returns token info, if found by its id.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.tokens.access.get(token_id_or_key=1)
@@ -73,7 +73,7 @@ This method updates token info, if found by its id.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    response = c.tokens.access.update(token_id_or_key=1, is_active=False)
@@ -89,7 +89,7 @@ This method deletes token, if found by its id.
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    # NOTE: There is empty response in case of successful operation
@@ -112,7 +112,7 @@ Rules of this filter are:
 
 .. code:: python
 
-   from serp_onpremise import Client
+   from serp import Client
 
    c = Client(api_token="abcd", base_url="http://localhost:8080")
    # NOTE: There is empty response in case of successful operation

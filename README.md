@@ -113,7 +113,7 @@ To run linters & test suite:
 
 ## Release History
 
-- 0.1.2
+- 0.1.4
   - Changed name to SERP
   - Minor fixes
 - 0.1.1
