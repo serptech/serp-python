@@ -81,7 +81,7 @@ if __name__ == '__main__':
 
 ```
 
-_For more examples and usage, please refer to the [docs](./docs)._
+_For more examples and usage, please refer to the [docs](https://serptech.github.io/serp-python/index.html)._
 
 ## Development setup
 
