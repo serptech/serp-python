@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Документация по использованию serp-onpremise &mdash; документация SERP-PYTHON 0.1.2</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=fc756e9b"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=29b1f277"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="Авторизация" href="authentication.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#">
+            
+              <img src="_static/logo_w.png" class="logo" alt="Логотип"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" aria-label="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Меню навигации">
+              <p class="caption" role="heading"><span class="caption-text">Содержание:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Базовые принципы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entries.html">Записи</a></li>
+<li class="toctree-l1"><a class="reference internal" href="groups.html">Person Groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="origins.html">Origins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profiles.html">Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spaces.html">Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tokens.html">Tokens</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Меню навигации для мобильных устройств" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">SERP-PYTHON</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Навигация по страницам">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Документация по использованию serp-onpremise</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="serp-onpremise">
+<h1>Документация по использованию serp-onpremise<a class="headerlink" href="#serp-onpremise" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Содержание:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Авторизация</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#id2">Токены доступа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#id3">Регистрация</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#id4">Авторизация</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#id5">Изменение пароля</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Базовые принципы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entries.html">Записи</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="entries.html#id2">Базовые принципы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entries.html#id3">Список записей</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="groups.html">Person Groups</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="groups.html#basic-concepts">Basic concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groups.html#create-profile-group">Create Profile Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groups.html#list-profile-groups">List Profile Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groups.html#get-profile-group-by-id">Get Profile Group by id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groups.html#update-profile-group-by-id">Update Profile Group by id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groups.html#delete-profile-group-by-id">Delete Profile Group by id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groups.html#get-a-list-of-profiles-in-a-group">Get a list of profiles in a group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groups.html#add-profiles-to-groups">Add profiles to groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groups.html#remove-profiles-to-groups">Remove profiles to groups</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="origins.html">Origins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="origins.html#basic-concepts">Basic concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="origins.html#create-origin">Create Origin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="origins.html#list-origins">List Origins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="origins.html#get-origin-by-id">Get Origin by id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="origins.html#update-origin-by-id">Update Origin by id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="origins.html#delete-origin-by-id">Delete Origin by id</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="profiles.html">Profiles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="profiles.html#basic-concepts">Basic concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles.html#create-profile">Create Profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles.html#re-init-profile-from-provided-photo">Re-init Profile from provided photo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles.html#search-profile-by-provided-photo">Search Profile by provided photo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles.html#delete-profile-by-pid">Delete Profile by PID</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spaces.html">Spaces</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spaces.html#basic-concepts">Basic concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spaces.html#create-space">Create Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spaces.html#list-spaces">List Spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spaces.html#get-space-by-id">Get Space by id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spaces.html#update-space-by-id">Update Space by id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spaces.html#delete-space-by-id">Delete Space by id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spaces.html#create-token-for-specified-space">Create Token for specified Space</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tokens.html">Tokens</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tokens.html#basic-concepts">Basic concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tokens.html#create-token">Create Token</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tokens.html#list-tokens">List Tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tokens.html#get-token-by-id">Get Token by id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tokens.html#update-token-by-id">Update Token by id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tokens.html#delete-token-by-id">Delete Token by id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tokens.html#delete-list-of-tokens">Delete List of Tokens</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Нижняя область">
+        <a href="authentication.html" class="btn btn-neutral float-right" title="Авторизация" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Авторские права 2023, SERP. </p>
+  </div>
+
+  Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

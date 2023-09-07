@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Записи &mdash; документация SERP-PYTHON 0.1.2</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=fc756e9b"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=29b1f277"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="Person Groups" href="groups.html" />
+    <link rel="prev" title="Базовые принципы" href="basics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo_w.png" class="logo" alt="Логотип"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" aria-label="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Меню навигации">
+              <p class="caption" role="heading"><span class="caption-text">Содержание:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Базовые принципы</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Записи</a></li>
+<li class="toctree-l1"><a class="reference internal" href="groups.html">Person Groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="origins.html">Origins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profiles.html">Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spaces.html">Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tokens.html">Tokens</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Меню навигации для мобильных устройств" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SERP-PYTHON</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Навигация по страницам">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Записи</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/entries.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>Записи<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<section id="id2">
+<h2>Базовые принципы<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>Записи - это контейнеры, которые хранят результат распознавания фотографий которые были загружены в платформу. Источником фотографий может быть пользователь (когда создает или реинициализирует персону) или камера видеонаблюдения которая подключена к платформе через сервер препроцессинга.</p>
+<p>Когда пользователь загружает фотографию, два типа записей может появиться в платформе: new и reinit.</p>
+<p>Когда камера видеонаблюдения подключена к платформе через сервер препроцессинга, все типы записей могут появляться в платформе (new, reinit, exact, ha, junk, nm, nf and det)</p>
+</section>
+<section id="id3">
+<h2>Список записей<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p><strong>Authorized Client() required.</strong></p>
+<p>This method returns paginated list of entries.</p>
+<p>All the filtering parameters in this call are optional, this example
+just shows every single option.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">serp</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">api_token</span><span class="o">=</span><span class="s2">&quot;abcd&quot;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://localhost:8080&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">entries</span><span class="o">.</span><span class="n">list</span><span class="p">(</span>
+    <span class="n">person_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;abcdef01-abcd-abcd01-abcdef01&quot;</span><span class="p">],</span>
+    <span class="n">conf</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="n">age_from</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">age_to</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">sex</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">mood</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;sad&quot;</span><span class="p">],</span>
+    <span class="n">origin_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">spaces_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">date_from</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">31</span><span class="p">),</span>
+    <span class="n">date_to</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">(),</span>
+    <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">offset</span><span class="o">=</span><span class="mi">5</span>
+<span class="p">)</span>
+<span class="n">json_response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json_response</span><span class="p">)</span>
+
+<span class="c1"># {</span>
+<span class="c1">#     &#39;next&#39;: &#39;http://localhost:8080/v1/entries/?limit=20&amp;offset=20&#39;,</span>
+<span class="c1">#     &#39;prev&#39;: None,</span>
+<span class="c1">#     &#39;data&#39;: [{</span>
+<span class="c1">#        &#39;id&#39;: 2,</span>
+<span class="c1">#        &#39;space_id&#39;: 2,</span>
+<span class="c1">#        &#39;origin_id&#39;: 1,</span>
+<span class="c1">#        &#39;person_id&#39;: &#39;c7111b45-c5cb-4c44-b097-5ede3584abe3&#39;,</span>
+<span class="c1">#        &#39;conf&#39;: 3,</span>
+<span class="c1">#        &#39;photo&#39;: &#39;&#39;,</span>
+<span class="c1">#        &#39;created&#39;: &#39;2022-09-06T08:52:01.581172+00:00&#39;,</span>
+<span class="c1">#        &#39;alive_probability&#39;: None,</span>
+<span class="c1">#        &#39;profile_photo&#39;: &#39;http://localhost:8080/static/mtmp1/c44385d1-ad78-481c-84ed-2cf3309f3852.png&#39;,</span>
+<span class="c1">#        &#39;distance&#39;: 100.0,</span>
+<span class="c1">#        &#39;exposure&#39;: 251369.71875,</span>
+<span class="c1">#        &#39;blur&#39;: 0.001,</span>
+<span class="c1">#        &#39;tilt&#39;: 18.51,</span>
+<span class="c1">#        &#39;pan&#39;: 8.53,</span>
+<span class="c1">#        &#39;age&#39;: 40,</span>
+<span class="c1">#        &#39;sex&#39;: 0,</span>
+<span class="c1">#        &#39;mood&#39;: &quot;sad&quot;</span>
+<span class="c1">#     }]</span>
+<span class="c1"># }</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Нижняя область">
+        <a href="basics.html" class="btn btn-neutral float-left" title="Базовые принципы" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Предыдущая</a>
+        <a href="groups.html" class="btn btn-neutral float-right" title="Person Groups" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Авторские права 2023, SERP. </p>
+  </div>
+
+  Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

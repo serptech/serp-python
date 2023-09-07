@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Person Groups &mdash; документация SERP-PYTHON 0.1.2</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=fc756e9b"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=29b1f277"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="Origins" href="origins.html" />
+    <link rel="prev" title="Записи" href="entries.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo_w.png" class="logo" alt="Логотип"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" aria-label="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Меню навигации">
+              <p class="caption" role="heading"><span class="caption-text">Содержание:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Базовые принципы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entries.html">Записи</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Person Groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="origins.html">Origins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profiles.html">Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spaces.html">Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tokens.html">Tokens</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Меню навигации для мобильных устройств" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SERP-PYTHON</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Навигация по страницам">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Person Groups</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/groups.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="person-groups">
+<h1>Person Groups<a class="headerlink" href="#person-groups" title="Link to this heading"></a></h1>
+<section id="basic-concepts">
+<h2>Basic concepts<a class="headerlink" href="#basic-concepts" title="Link to this heading"></a></h2>
+<p>You can group profiles into arbitrary lists. Each profile can be added
+to any number of groups.</p>
+</section>
+<section id="create-profile-group">
+<h2>Create Profile Group<a class="headerlink" href="#create-profile-group" title="Link to this heading"></a></h2>
+<p><strong>Authorized Client() required.</strong></p>
+<p>This method creates new person group.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">serp</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">api_token</span><span class="o">=</span><span class="s2">&quot;abcd&quot;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://localhost:8080&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">groups_profiles</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<span class="n">json_response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="list-profile-groups">
+<h2>List Profile Groups<a class="headerlink" href="#list-profile-groups" title="Link to this heading"></a></h2>
+<p><strong>Authorized Client() required.</strong></p>
+<p>This method returns paginated list of groups.</p>
+<p>Can be filtered by name using <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
+<p>All the filtering parameters in this call are optional, this example
+just shows every single option.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">serp</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">api_token</span><span class="o">=</span><span class="s2">&quot;abcd&quot;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://localhost:8080&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">groups_profiles</span><span class="o">.</span><span class="n">list</span><span class="p">(</span>
+    <span class="n">q</span><span class="o">=</span><span class="s2">&quot;te&quot;</span><span class="p">,</span>
+    <span class="n">person_ids_include</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;abcdef01-abcd-abcd01-abcdef01&quot;</span><span class="p">],</span>
+    <span class="n">person_ids_exclude</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;fedcab10-dcba-dcba10-fedcab10&quot;</span><span class="p">],</span>
+    <span class="n">groups_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="n">spaces_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">offset</span><span class="o">=</span><span class="mi">5</span>
+<span class="p">)</span>
+<span class="n">json_response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="get-profile-group-by-id">
+<h2>Get Profile Group by id<a class="headerlink" href="#get-profile-group-by-id" title="Link to this heading"></a></h2>
+<p><strong>Authorized Client() required.</strong></p>
+<p>This method returns group info, if found by its id.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">serp</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">api_token</span><span class="o">=</span><span class="s2">&quot;abcd&quot;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://localhost:8080&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">groups_profiles</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">json_response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="update-profile-group-by-id">
+<h2>Update Profile Group by id<a class="headerlink" href="#update-profile-group-by-id" title="Link to this heading"></a></h2>
+<p><strong>Authorized Client() required.</strong></p>
+<p>This method updates group info, if found by its id.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">serp</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">api_token</span><span class="o">=</span><span class="s2">&quot;abcd&quot;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://localhost:8080&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">groups_profiles</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;newname&quot;</span><span class="p">)</span>
+<span class="n">json_response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="delete-profile-group-by-id">
+<h2>Delete Profile Group by id<a class="headerlink" href="#delete-profile-group-by-id" title="Link to this heading"></a></h2>
+<p><strong>Authorized Client() required.</strong></p>
+<p>This method deletes group, if found by its id.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">serp</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">api_token</span><span class="o">=</span><span class="s2">&quot;abcd&quot;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://localhost:8080&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">groups_profiles</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">204</span><span class="p">:</span>
+    <span class="c1"># NOTE: There is empty response in case of successful operation</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Person Group deleted successfully.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="get-a-list-of-profiles-in-a-group">
+<h2>Get a list of profiles in a group<a class="headerlink" href="#get-a-list-of-profiles-in-a-group" title="Link to this heading"></a></h2>
+<p><strong>Authorized Client() required.</strong></p>
+<p>This method returns paginated results of persons that are in a group, if
+found by id.</p>
+<p>You can filter out list by specifying exact list of person ids.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">serp</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">api_token</span><span class="o">=</span><span class="s2">&quot;abcd&quot;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://localhost:8080&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">groups_profiles</span><span class="o">.</span><span class="n">person_ids</span><span class="p">(</span>
+    <span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">person_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;abcdef01-abcd-abcd01-abcdef01&quot;</span><span class="p">],</span>
+    <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">offset</span><span class="o">=</span><span class="mi">0</span>
+<span class="p">)</span>
+<span class="n">json_response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="add-profiles-to-groups">
+<h2>Add profiles to groups<a class="headerlink" href="#add-profiles-to-groups" title="Link to this heading"></a></h2>
+<p><strong>Authorized Client() required.</strong></p>
+<p>This method allows you to add many persons to many groups in one
+request.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">serp</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">api_token</span><span class="o">=</span><span class="s2">&quot;abcd&quot;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://localhost:8080&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">groups_profiles</span><span class="o">.</span><span class="n">add_person_ids</span><span class="p">(</span>
+    <span class="n">person_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;abcdef01-abcd-abcd01-abcdef01&quot;</span><span class="p">],</span>
+    <span class="n">groups_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="remove-profiles-to-groups">
+<h2>Remove profiles to groups<a class="headerlink" href="#remove-profiles-to-groups" title="Link to this heading"></a></h2>
+<p><strong>Authorized Client() required.</strong></p>
+<p>This method allows you to remove many persons from many groups in one
+request.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">serp</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">api_token</span><span class="o">=</span><span class="s2">&quot;abcd&quot;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://localhost:8080&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">groups_profiles</span><span class="o">.</span><span class="n">remove_person_ids</span><span class="p">(</span>
+    <span class="n">person_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;abcdef01-abcd-abcd01-abcdef01&quot;</span><span class="p">],</span>
+    <span class="n">groups_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Нижняя область">
+        <a href="entries.html" class="btn btn-neutral float-left" title="Записи" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Предыдущая</a>
+        <a href="origins.html" class="btn btn-neutral float-right" title="Origins" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Авторские права 2023, SERP. </p>
+  </div>
+
+  Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
