@@ -2,8 +2,8 @@ import os
 
 import pytest
 
-from serp_onpremise.constants import sentinel
-from serp_onpremise.utils import (
+from serp.constants import sentinel
+from serp.utils import (
     prepare_file_processing,
     process_query_params,
     request_dict_processing,

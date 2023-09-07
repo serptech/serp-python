@@ -2,7 +2,7 @@ import asyncio
 
 import pytest
 
-from serp_onpremise import AsyncClient, Client
+from serp import AsyncClient, Client
 
 
 @pytest.fixture(scope="session")

@@ -1,15 +1,13 @@
-# Python API client for SERP on-premise API
+# Python API client for SERP API
 
 ---
-
-This library is mirror of official SERP on-premise API in terms of methods and interfaces.
 
 For your convenience, you can make API calls using sync or async (asyncio) interface.
 
 ## Installation
 
 ```sh
-pip install serp_onpremise
+pip install serp
 ```
 
 Note that it is always recommended pinning version of your installed packages.
@@ -19,7 +17,7 @@ Note that it is always recommended pinning version of your installed packages.
 An example of how to create an origin:
 
 ```python
-from serp_onpremise import Client
+from serp import Client
 
 
 if __name__ == '__main__':
@@ -35,7 +33,7 @@ if __name__ == '__main__':
 Now that we have our origin created, we can create profile inside that origin:
 
 ```python
-from serp_onpremise import Client
+from serp import Client
 
 
 def create_profiles_example(client: Client):
@@ -61,7 +59,7 @@ if __name__ == '__main__':
 Now that we have our origin & profile created, we can search for profile:
 
 ```python
-from serp_onpremise import Client
+from serp import Client
 
 
 def search_profiles_example(client: Client):
@@ -115,6 +113,9 @@ To run linters & test suite:
 
 ## Release History
 
+- 0.1.2
+  - Changed name to SERP
+  - Minor fixes
 - 0.1.1
   - Fixed types of custom Enum classes and in corresponding methods
 - 0.1.0
