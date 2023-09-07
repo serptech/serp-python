@@ -12,10 +12,10 @@
 4. As of now, all temporary tokens have the same TTL of 24 hours since
    creation time.
 
-Register
+Регистрация
 ~~~~~~~~
 
-If you use root token, you can create new users.
+Если вы используете root токен, то вы можете создавать пользователей.
 
 .. code:: python
 
@@ -36,11 +36,10 @@ If you use root token, you can create new users.
        #    'msg': 'user with such username already exists',
        #    'code': 13}]}
 
-Login
+Авторизация
 ~~~~~
 
-This method creates new temporary token for user if username/password
-pair is correct.
+Этот метод создает новый временный token для пользователя, если пара логин, пароль верная.
 
 .. code:: python
 
@@ -73,7 +72,7 @@ pair is correct.
        # 'msg': 'incorrect username or password',
        # 'code': 33}]}
 
-After that you need to re-create Client instance with as so:
+После этого вы можете создавать инстанс клиента: 
 
 .. code:: python
 
@@ -86,11 +85,10 @@ After that you need to re-create Client instance with as so:
 
    # From now on, use this new client instance whenever you access API
 
-Change password
+Изменение пароля
 ~~~~~~~~~~~~~~~
 
-Given correct current password, this method allows you to specify new
-password & optionally reset all tokens that were previously created.
+Этот метод позволяет вам задать новый пароль и сбросить все выпущенные до этого момента токены пользователя.
 
 .. code:: python
 
