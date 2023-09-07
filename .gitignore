@@ -85,3 +85,5 @@ docs/preconvert
 site/
 out
 coverage.xml
+
+dist/
